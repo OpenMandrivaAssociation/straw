@@ -13,7 +13,6 @@ Group:		Networking/News
 URL:		http://www.gnome.org/projects/straw/
 Source0:	http://ftp.gnome.org/pub/GNOME/sources/straw/%{fname}.tar.bz2
 Source1:	%name-icons.tar.bz2
-BuildRoot:      %{_tmppath}/%{name}-%{version}-%{release}-buildroot
 
 BuildRequires:	libpython-devel >= 2.3
 BuildRequires:	pygtk2.0-libglade >= 2.6
