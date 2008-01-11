@@ -56,18 +56,6 @@ rm -rf %buildroot%_sysconfdir/gconf/gconf.xml.defaults
 
 chmod 0644 NEWS LICENSE README TODO
 
-mkdir -p %buildroot/%_menudir
-cat > %buildroot/%_menudir/%name << EOF
-
-?package(%name): \
-        command="%_bindir/%name" \
-        needs="X11" \
-        section="Networking/Other" \
-        icon="%name.png" \
-        title="Straw" \
-        longtitle="%Summary" \
-	xdg="true"
-EOF
 
 desktop-file-install --vendor="" \
   --remove-category="Application" \
@@ -105,7 +93,6 @@ rm -rf %buildroot
 %{_datadir}/%name
 %{py_puresitedir}/%name
 %{py_puresitedir}/*.egg-info
-%{_menudir}/%name
 %{_iconsdir}/*/%name.png
 %{_iconsdir}/%name.png
 %{_datadir}/pixmaps/%name.png
