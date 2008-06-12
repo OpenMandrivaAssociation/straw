@@ -69,16 +69,20 @@ desktop-file-install --vendor="" \
 %__install -D -m 644 %{name}32.png %buildroot/%_iconsdir/%name.png
 %__install -D -m 644 %{name}16.png %buildroot/%_miconsdir/%name.png
 
+%if %mdkversion < 200900
 %post
 %update_menus
 %post_install_gconf_schemas %{name}
+%endif
 
 %preun
 %preun_uninstall_gconf_schemas %{name}
 
 
+%if %mdkversion < 200900
 %postun
 %clean_menus
+%endif
 
 %clean
 rm -rf %buildroot
