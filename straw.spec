@@ -1,6 +1,6 @@
 %define	name	straw
 %define version 0.27
-%define release %mkrel 3
+%define release %mkrel 4
 %define fname %name-%{version}
 %define	Summary	RSS feed agregator for Gnome
 
