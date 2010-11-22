@@ -15,7 +15,7 @@ Source0:	http://ftp.gnome.org/pub/GNOME/sources/straw/%{fname}.tar.bz2
 Source1:	%name-icons.tar.bz2
 BuildRoot:      %{_tmppath}/%{name}-%{version}-%{release}-buildroot
 
-BuildRequires:	libpython-devel >= 2.3
+BuildRequires:	python-devel >= 2.3
 BuildRequires:	pygtk2.0-libglade >= 2.6
 BuildRequires:	pygtk2.0-devel >= 2.6
 BuildRequires:	gnome-python-canvas
@@ -50,7 +50,7 @@ python setup.py build
 
 %install
 rm -rf ${RPM_BUILD_ROOT}
-python setup.py install --prefix=%_prefix --root=%buildroot
+python setup.py install --prefix=%_prefix --root=%buildroot --disable-modules-check
 %find_lang %name
 rm -rf %buildroot%_sysconfdir/gconf/gconf.xml.defaults
 
