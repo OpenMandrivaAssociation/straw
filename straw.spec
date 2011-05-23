@@ -13,6 +13,7 @@ Group:		Networking/News
 URL:		http://www.gnome.org/projects/straw/
 Source0:	http://ftp.gnome.org/pub/GNOME/sources/straw/%{fname}.tar.bz2
 Source1:	%name-icons.tar.bz2
+Patch0:		straw-0.27-fix-build.patch
 BuildRoot:      %{_tmppath}/%{name}-%{version}-%{release}-buildroot
 
 BuildRequires:	python-devel >= 2.3
@@ -44,9 +45,10 @@ traditional browser.
 
 %prep
 %setup -q -n %fname -a1
+%patch0 -p0
 
 %build
-python setup.py build
+python setup.py build -v
 
 %install
 rm -rf ${RPM_BUILD_ROOT}
