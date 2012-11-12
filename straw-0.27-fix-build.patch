@@ -1,0 +1,11 @@
+--- tools/straw_distutils.py.build	2011-05-23 17:54:19.000000000 +0200
++++ tools/straw_distutils.py	2011-05-23 17:54:25.000000000 +0200
+@@ -79,7 +79,7 @@
+         if self.distribution.has_desktop_file():
+             for desktop in self.distribution.desktop_file:
+                 dest = os.path.normpath(os.path.join(self.build_base, 'share/applications'))
+-                self.mkpath(dest, 1)
++                self.mkpath(dest)
+                 fname = '.'.join(desktop.split('.')[:2]) # straw.desktop.in -> straw.desktop
+                 cmd = '%s -d -u po %s %s/%s' % (self.intl_merge, desktop,
+                                                 dest, fname)
