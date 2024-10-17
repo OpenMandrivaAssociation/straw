@@ -10,7 +10,7 @@ Version:	%version
 Release:	%release
 License:	GPL
 Group:		Networking/News
-URL:		http://www.gnome.org/projects/straw/
+URL:		https://www.gnome.org/projects/straw/
 Source0:	http://ftp.gnome.org/pub/GNOME/sources/straw/%{fname}.tar.bz2
 Source1:	%name-icons.tar.bz2
 Patch0:		straw-0.27-fix-build.patch
